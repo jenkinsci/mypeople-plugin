@@ -58,7 +58,12 @@ public class MyPeople {
 		
 		String msg;
 		msg = "Build Failure!!!";
-		msg += "    " + buildState.getFullUrl();
+		String fullurl = buildState.getFullUrl();
+		if(fullurl != null) {
+			msg += "    " + buildState.getFullUrl();
+		}else {
+			msg += "    " + buildState.getUrl();
+		}
 		
 		return msg;
 	}
