@@ -1,4 +1,4 @@
-# My People Jenkins
+# My People Jenkins Plugin
 
 Sends the build result to Daum My People messanger.
 You need your own bot.
