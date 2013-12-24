@@ -1,8 +1,8 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
    xmlns:super="/hudson/plugins/im/IMPublisher">
 
-    <f:entry title="${%Buddy}" field="job"
-             description="${%Buddy id}">
+    <f:entry title="${%Buddy ID}" field="buddy"
+             description="${%Buddy id to receive the notification}">
 
         <f:textbox
           name="${descriptor.PARAM_TARGETS}"

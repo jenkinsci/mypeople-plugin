@@ -40,7 +40,7 @@ public class MyPeople {
 	private static String API_URL_POSTFIX;
 	
 	
-	private final static Logger LOG = Logger.getLogger("mypeople");
+	public final static Logger LOG = Logger.getLogger("mypeople");
 	
 	
 	private MyPeople() {

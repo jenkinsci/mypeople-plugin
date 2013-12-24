@@ -25,6 +25,15 @@ final class MpImConnection implements IMConnection {
         String buddyId = gcmTarget.getBuddyId();
 
 		String apikey = MpPublisher.DESCRIPTOR.getApiKey();
+		
+		
+		if(apikey == null || buddyId == null || apikey.isEmpty() || buddyId.isEmpty()) {
+			MyPeople.LOG.info("buddy id: " + buddyId);
+			MyPeople.LOG.info("apikey: " + apikey);
+			MyPeople.LOG.warning("no apikey or no buddy id");
+			return;
+		}
+				
 		MyPeople.setAPIKEY(apikey);
 		MyPeople.sendMessage(buddyId, text);
 			

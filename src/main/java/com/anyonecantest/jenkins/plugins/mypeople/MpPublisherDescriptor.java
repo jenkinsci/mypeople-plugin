@@ -1,8 +1,6 @@
 package com.anyonecantest.jenkins.plugins.mypeople;
 
 import hudson.model.AutoCompletionCandidates;
-
-
 import hudson.model.AbstractProject;
 import hudson.model.User;
 import hudson.plugins.im.IMMessageTarget;
@@ -15,6 +13,7 @@ import hudson.plugins.im.build_notify.BuildToChatNotifier;
 import hudson.plugins.im.config.ParameterNames;
 import hudson.tasks.BuildStepDescriptor;
 import hudson.tasks.Publisher;
+import hudson.util.FormValidation;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -60,6 +59,20 @@ public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implem
         return "";
     }
 
+    
+    public FormValidation doCheckBuddy(@QueryParameter(value = PARAM_TARGETS) String buddyId) {
+
+    	if(buddyId.isEmpty()) {
+    		return FormValidation.error("Buddy ID must not be empty.");
+    	}else {
+    	        
+    		return FormValidation.ok();
+    	}
+    	
+    }
+    
+    
+    
     @Override
     public boolean isEnabled() {
         // This plugin doesn't require a persistent server connection,
@@ -77,12 +90,19 @@ public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implem
         return apiKey;
     }
 
+    /**
+     * This function is called applying or saving a job setting.
+     */
     @Override
     public MpPublisher newInstance(final StaplerRequest req, JSONObject formData)
             throws FormException {
-        final String t = req.getParameter(PARAM_TARGETS);
-       
-
+        
+    	// Buddy id
+    	final String t = req.getParameter(PARAM_TARGETS);
+    	//if(t == null || t.trim().length() == 0) {
+    	//	MyPeople.LOG.warning("buddy is empty.");
+    	//	throw new FormException("Buddy id must not be emtpy.", "buddyid");    		
+    	//}
         List<IMMessageTarget> targets = new ArrayList<IMMessageTarget>(1);
         targets.add(new MpMessageTarget(t));
 
