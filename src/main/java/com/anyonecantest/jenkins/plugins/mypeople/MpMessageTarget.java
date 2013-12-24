@@ -26,7 +26,7 @@ final class MpMessageTarget implements IMMessageTarget {
         return buddyId;
     }
 
-    /** @return Returns null */
+    /** @return Returns null. */
     String getToken() {
     	return null;
     	

@@ -2,6 +2,7 @@ package com.anyonecantest.jenkins.plugins.mypeople;
 
 import hudson.model.AutoCompletionCandidates;
 
+
 import hudson.model.AbstractProject;
 import hudson.model.User;
 import hudson.plugins.im.IMMessageTarget;
@@ -27,23 +28,19 @@ import org.kohsuke.stapler.StaplerRequest;
 public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implements IMPublisherDescriptor {
 
     // Distinguishes the config for this IM plugin from others
-    private static final String PREFIX = "gcm.";
+    private static final String PREFIX = "mp.";
 
-    // Required by {@code GcmPublish/global.jelly}
-    public static final String PARAM_PROJECT_NUMBER = PREFIX + "projectNumber";
+    // Required by {@code MpPublish/global.jelly}
     public static final String PARAM_API_KEY = PREFIX + "apiKey";
 
-    // Required by {@code GcmPublish/config.jelly}
+    // Required by {@code MpPublish/config.jelly}
     public static final String PARAM_TARGETS = PREFIX + "targets";
 
     // Required to be named like this for {@code IMPublisher/notification-strategy.jelly}
     public static final String[] PARAMETERVALUE_STRATEGY_VALUES = NotificationStrategy.getDisplayNames();
     public static final String PARAMETERVALUE_STRATEGY_DEFAULT = NotificationStrategy.STATECHANGE_ONLY.getDisplayName();
 
-    // Project number from the Google API console
-    private String projectNumber;
-
-    // Server API key from the Google API console
+    // Server API key of My People Bot
     private String apiKey;
 
     public MpPublisherDescriptor() {
@@ -70,19 +67,11 @@ public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implem
         return true;
     }
 
-    /**
-     * Returns the globally-configured Google APIs project number.
-     * 
-     * @return Project number from the Google API console, or {@code null} if not set.
-     */
-    public String getProjectNumber() {
-        return projectNumber;
-    }
-
+    
     /**
      * Returns the globally-configured server API key for this project.
      * 
-     * @return Server API key from the Google API console, or {@code null} if not set.
+     * @return Bot API key.
      */
     public String getApiKey() {
         return apiKey;
@@ -92,27 +81,8 @@ public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implem
     public MpPublisher newInstance(final StaplerRequest req, JSONObject formData)
             throws FormException {
         final String t = req.getParameter(PARAM_TARGETS);
+       
 
-        /*
-        final String[] givenTargets;
-        if (t == null) {
-            givenTargets = new String[0];
-        } else {
-            givenTargets = t.split("[\\s,]+");
-        }
-
-        
-        // From the users listed, determine which ones are actual Jenkins users
-        List<IMMessageTarget> targets = new ArrayList<IMMessageTarget>(givenTargets.length);
-        for (String userId : givenTargets) {
-            User user = User.get(userId.trim(), false);
-            if (user != null) {
-                targets.add(new GcmMessageTarget(user.getId()));
-            }
-        }
-        */
-        
-        // for testing
         List<IMMessageTarget> targets = new ArrayList<IMMessageTarget>(1);
         targets.add(new MpMessageTarget(t));
 
@@ -173,7 +143,7 @@ public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implem
 
     @Override
     public boolean configure(StaplerRequest req, JSONObject json) throws FormException {
-        projectNumber = req.getParameter(PARAM_PROJECT_NUMBER);
+        
         apiKey = req.getParameter(PARAM_API_KEY);
         save();
         return super.configure(req, json);

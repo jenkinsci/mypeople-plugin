@@ -53,9 +53,7 @@ public class MyPeople {
 	}
 
 		
-	public static void sendMessage(String buddyId, String msg) throws MpImException 
-			//throws ClientProtocolException, IOException, UnsupportedEncodingException, MpImException
-        {
+	public static void sendMessage(String buddyId, String msg) throws MpImException {
 		
 		try {
 			String requestUrl = MyPeople.API_URL_PREFIX + "/mypeople/buddy/send.json";
