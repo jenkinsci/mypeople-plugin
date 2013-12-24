@@ -1,0 +1,14 @@
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define"
+  xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form"
+  xmlns:super="/hudson/plugins/im/IMPublisher">
+
+    <f:section title="Daum My People Messaging Notifications">
+		
+		<f:entry title="${%Bot API key}" field="apiKey"
+                 description="${%API KEY of the bot}">
+            <f:textbox name="${descriptor.PARAM_API_KEY}" value="${descriptor.apiKey}" />
+	    </f:entry>
+
+    </f:section>
+
+</j:jelly>
