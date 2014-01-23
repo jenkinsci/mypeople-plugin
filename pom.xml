@@ -15,7 +15,15 @@
     <name>My People plugin</name>
     <description>Sends notifications about jobs phases and status to Daum My People messenger (mypeople.daum.net‎)</description>
     <url>https://wiki.jenkins-ci.org/display/JENKINS/MyPeople+Plugin</url>
-    
+
+ 	<distributionManagement>
+    	<repository>
+	    	<id>maven.jenkins-ci.org</id>
+	    	<url>http://maven.jenkins-ci.org:8081/content/repositories/releases/</url>
+	    </repository>
+	</distributionManagement>
+
+
     <developers>
         <developer>
             <id>linugee</id>
