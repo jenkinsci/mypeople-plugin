@@ -14,11 +14,11 @@
     <packaging>hpi</packaging>
     <name>My People plugin</name>
     <description>Sends notifications about jobs phases and status to Daum My People messenger (mypeople.daum.net‎)</description>
-    <url>https://github.com/anyone-can-test/mypeople-plugin</url>
+    <url>https://wiki.jenkins-ci.org/display/JENKINS/MyPeople+Plugin</url>
     
     <developers>
         <developer>
-            <id>anyone-can-test</id>
+            <id>linugee</id>
             <name>Hyunil Shin</name>
             <email>anyone.can.test@gmail.com</email>
             <timezone>1</timezone>
@@ -79,7 +79,9 @@
     </build>
 
     <scm>
-        <url>https://github.com/anyone-can-test/mypeople-plugin</url>
+		<connection>scm:git@github.com:jenkinsci/mypeople-plugin.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/mypeople-plugin.git</developerConnection>
+        <url>https://github.com/jenkinsci/mypeople-plugin</url>
     </scm>
 
     <repositories>
