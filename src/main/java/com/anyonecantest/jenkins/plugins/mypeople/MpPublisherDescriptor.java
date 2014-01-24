@@ -62,7 +62,7 @@ public class MpPublisherDescriptor extends BuildStepDescriptor<Publisher> implem
     
     public FormValidation doCheckBuddy(@QueryParameter(value = PARAM_TARGETS) String buddyId) {
 
-    	if(buddyId.isEmpty()) {
+    	if(buddyId.length() == 0) {
     		return FormValidation.error("Buddy ID must not be empty.");
     	}else {
     	        
