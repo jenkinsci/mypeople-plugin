@@ -13,7 +13,7 @@
     <version>0.2-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <name>My People plugin</name>
-    <description>Sends notifications about jobs phases and status to Daum My People messenger (mypeople.daum.net‎)</description>
+    <description>Sends notifications about jobs phases and status to Daum My People messenger (mypeople.daum.net)</description>
     <url>https://wiki.jenkins-ci.org/display/JENKINS/MyPeople+Plugin</url>
 
  	<distributionManagement>
@@ -38,6 +38,7 @@
             <groupId>org.jvnet.hudson.plugins</groupId>
             <artifactId>instant-messaging</artifactId>
             <version>1.28</version>
+			<scope>compile</scope>
         </dependency>
 
         <dependency>
