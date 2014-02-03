@@ -9,7 +9,6 @@
     </parent>
 
 	<artifactId>mypeople</artifactId>
-    <groupId>com.anyonecantest.jenkins.plugins</groupId>
     <version>0.2-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <name>My People plugin</name>
