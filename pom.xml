@@ -8,6 +8,7 @@
         <relativePath>../instant-messaging-parent-plugin/pom.xml</relativePath>
     </parent>
 
+	<groupId>org.jenkins-ci.plugins</groupId>
 	<artifactId>mypeople</artifactId>
     <version>0.2-SNAPSHOT</version>
     <packaging>hpi</packaging>
