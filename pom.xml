@@ -10,7 +10,7 @@
 
 	<groupId>org.jenkins-ci.plugins</groupId>
 	<artifactId>mypeople</artifactId>
-    <version>0.4-SNAPSHOT</version>
+    <version>0.3.0.1-SNAPSHOT</version>
     <packaging>hpi</packaging>
     <name>My People plugin</name>
     <description>Sends notifications about jobs phases and status to Daum My People messenger (mypeople.daum.net)</description>
