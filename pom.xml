@@ -10,7 +10,7 @@
 
 	<groupId>org.jenkins-ci.plugins</groupId>
 	<artifactId>mypeople</artifactId>
-    <version>0.3-SNAPSHOT</version>
+    <version>0.3</version>
     <packaging>hpi</packaging>
     <name>My People plugin</name>
     <description>Sends notifications about jobs phases and status to Daum My People messenger (mypeople.daum.net)</description>
@@ -105,7 +105,7 @@
 		<connection>scm:git@github.com:jenkinsci/mypeople-plugin.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jenkinsci/mypeople-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/mypeople-plugin</url>
-      <tag>HEAD</tag>
+      <tag>mypeople-0.3</tag>
   </scm>
 
 
