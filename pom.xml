@@ -102,8 +102,8 @@
     </build>
 
     <scm>
-	<connection>scm:git:ssh:@github.com/jenkinsci/mypeople-plugin.git</connection>		         
-	<developerConnection>scm:git:ssh://git@github.com/jenkinsci/mypeople-plugin.git</developerConnection>
+	<connection>scm:git:github.com:jenkinsci/mypeople-plugin.git</connection>
+	<developerConnection>scm:git:git@github.com:jenkinsci/mypeople-plugin.git</developerConnection>
         	<url>https://github.com/jenkinsci/mypeople-plugin</url>
       	<tag>HEAD</tag>
   </scm>
